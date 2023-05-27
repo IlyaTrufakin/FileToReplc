@@ -61,11 +61,11 @@ namespace File_Text_Replace
                         replacementCount++;
                     }
                 }
-                Count = replacementCount;
                 string replacedText = string.Join(" ", words); // Объединяем слова обратно в строку
                 newText.AddTextString(replacedText);
-                newText.Count = Count;
             }
+            Count = replacementCount;
+            newText.Count = Count;
             return newText;
         }
     }
