@@ -132,8 +132,6 @@ namespace File_Text_Replace
             Console.WriteLine($"Всего замен для слова '{word}': {textAfterReplace.Count}");
             filePath = "FileAfterReplc.txt";
             filesHandling.WriteTextFile(filePath, textAfterReplace);
-            filePath = "FileAfterReplc.txt";
-            filesHandling.WriteTextFile(filePath, textAfterReplace);
         }
     }
 }
