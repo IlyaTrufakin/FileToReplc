@@ -45,7 +45,6 @@ namespace File_Text_Replace
 
         public Text Replace(string word, string wordToReplace)
         {
-
             Text newText = new Text();
             int replacementCount = 0;
 
@@ -61,11 +60,11 @@ namespace File_Text_Replace
                         replacementCount++;
                     }
                 }
-                Count = replacementCount;
                 string replacedText = string.Join(" ", words); // Объединяем слова обратно в строку
                 newText.AddTextString(replacedText);
-                newText.Count = Count;
             }
+            Count = replacementCount;
+            newText.Count = Count;
             return newText;
         }
     }
@@ -92,7 +91,7 @@ namespace File_Text_Replace
         }
 
 
-        public static void WriteTextFile(string filePath, Text textObject)
+        public void WriteTextFile(string filePath, Text textObject)
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
@@ -131,6 +130,10 @@ namespace File_Text_Replace
             textAfterReplace.PrintTexts();
             Console.WriteLine("\n___________________________________________________________________________________");
             Console.WriteLine($"Всего замен для слова '{word}': {textAfterReplace.Count}");
+            filePath = "FileAfterReplc.txt";
+            filesHandling.WriteTextFile(filePath, textAfterReplace);
+            filePath = "FileAfterReplc.txt";
+            filesHandling.WriteTextFile(filePath, textAfterReplace);
         }
     }
 }
